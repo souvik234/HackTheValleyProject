@@ -22,7 +22,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.home, name="Food-Home"),
-    path('inventory/', views.InventoryView, name = "Inventory")
+    path('inventory/', views.InventoryView, name = "Inventory"),
+    path('recipes/', views.RecipeView, name = "Recipes")
 ]
 
 urlpatterns += static(settings.MEDIA_URL,

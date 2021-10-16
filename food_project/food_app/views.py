@@ -12,3 +12,9 @@ def InventoryView(request):
         'items': ItemPurchased.objects.all()
     }
     return render(request, 'food_app/inventory.html', context=context)
+
+def RecipeView(request):
+    context = {
+        'items': ItemPurchased.objects.all()
+    }
+    return render(request, 'food_app/recipes.html', context=context)
