@@ -9,7 +9,7 @@ class ItemPurchased(models.Model):
     quantity = models.FloatField()
     photo = models.ImageField(upload_to='items')
 
-    expiry_date = date_purchased.date() +
+    expiry_date = date_purchased.date()
     def __str__(self):
         return self.name
 
