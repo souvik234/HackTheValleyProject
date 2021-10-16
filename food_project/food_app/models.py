@@ -7,9 +7,19 @@ expiryDict={
     'Milk': 30,
     'Bananas': 7,
     'Eggs': 14,
-    'lettuce': 12
-
-
+    'Lettuce': 12,
+    'Flour': 180,
+    'Onions': 7,
+    'Potatoes': 90,
+    'Cheese': 10,
+    'Nutmeg': 365,
+    'Carrots': 31,
+    'Lentils': 365,
+    'Spinach': 14,
+    'Walnuts': 365,
+    'Turkey': 3,
+    'Butter': 14,
+    'Chicken': 3,
 }
 
 class Recipe(models.Model):
