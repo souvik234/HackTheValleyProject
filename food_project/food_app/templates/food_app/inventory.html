@@ -26,7 +26,7 @@
                         <td sorttable_customkey="{{ item.date_purchased|date:'Y-m-d' }}">
                           {{item.date_purchased}}
                         </td>
-                        <td>
+                        <td sorttable_customkey="{{ item.expiry_date|date:'Y-m-d' }}">
                             {{item.expiry_date}}
                         </td>
                     </tr>
