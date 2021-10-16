@@ -1,0 +1,92 @@
+{% extends "food_app/base.html" %}
+{% block content %}
+
+<table class="table table-sm">
+                    <tr>
+                        <th>Sl. Number</th>
+                        <th>Item Name</th>
+                        <th>Image</th>
+                        <th>Quantity</th>
+                        <th>Date Purchased</th>
+                        <th>Expiry</th>
+                    </tr>
+
+                    {% for item in items %}
+
+                    <tr>
+                        <td>{{item.id}}</td>
+                        <td>{{item.name}}</td>
+                        <td>
+                          <img src="{{ item.photo.url }}" width="100px" height="100px">
+                        </td>
+                        <td>
+                            {{item.quantity}}
+                        </td>
+                        <td>
+                          {{item.date_purchased}}
+                        </td>
+                        <td>
+                          Rand
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+
+<script>
+    let items = document.querySelectorAll('.carousel .carousel-item')
+
+items.forEach((el) => {
+    const    minPerSlide = 4
+    let next = el.nextElementSibling
+    for (var i=1; i<minPerSlide; i++) {
+        if (!next) {
+            // wrap carousel by using first child
+        	next = items[0]
+      	}
+        let cloneChild = next.cloneNode(true)
+        el.appendChild(cloneChild.children[0])
+        next = next.nextElementSibling
+    }
+})
+
+</script>
+
+<style>
+    @media (max-width: 767px) {
+    .carousel-inner .carousel-item > div {
+        display: none;
+    }
+    .carousel-inner .carousel-item > div:first-child {
+        display: block;
+    }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+    display: flex;
+}
+
+/* medium and up screens */
+@media (min-width: 768px) {
+
+    .carousel-inner .carousel-item-end.active,
+    .carousel-inner .carousel-item-next {
+      transform: translateX(25%);
+    }
+
+    .carousel-inner .carousel-item-start.active,
+    .carousel-inner .carousel-item-prev {
+      transform: translateX(-25%);
+    }
+}
+
+.carousel-inner .carousel-item-end,
+.carousel-inner .carousel-item-start {
+  transform: translateX(0);
+}
+
+
+</style>
+
+{% endblock content %}
