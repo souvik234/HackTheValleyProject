@@ -1,7 +1,8 @@
 {% extends "food_app/base.html" %}
 {% block content %}
-
-<table class="table table-sm">
+{% load static %}
+<script src="{% static 'sorttable.js' %}"></script>
+<table class="table table-sm sortable">
                     <tr>
                         <th>Sl. Number</th>
                         <th>Item Name</th>
@@ -22,7 +23,7 @@
                         <td>
                             {{item.quantity}}
                         </td>
-                        <td>
+                        <td sorttable_customkey="{{ item.date_purchased|date:'Y-m-d' }}">
                           {{item.date_purchased}}
                         </td>
                         <td>
